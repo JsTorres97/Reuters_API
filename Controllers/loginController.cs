@@ -35,6 +35,8 @@ namespace Reuters_api.Controllers
                 {
                     //lista.Add("{");
                     lista.Add("codigo: 1");
+                    lista.Add("NOMBRE: " + dr["NOMBRE"]);
+                    lista.Add("NUM_EMPLEADO: " + dr["NUMERO_EMPLEADO"]);
                     lista.Add("is_admin: " + dr["IS_ADMIN"]);
                     lista.Add("is_user: " + dr["IS_USER"]);
                    // lista.Add("}");
