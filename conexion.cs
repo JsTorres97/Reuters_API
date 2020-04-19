@@ -83,6 +83,49 @@ namespace Reuters_api
             return dr;
         }
 
+        public SqlDataReader get_usuario()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("total_usuarios", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+
+        public SqlDataReader get_hot_desk_disponibles()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("hot_desk_disponibles", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader get_usuarios_en_la_oficina()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("usuarios_en_la_oficina", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader get_usuarios_activos()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("usuarios_activos", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader get_proximas_reservaciones(string num_emp)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("proximas_reservaciones", con);
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_EMPLEADO", num_emp));
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+
         public int registra_movimiento(string tipom, string num_lugar, string num_emp, string id_horario)
         {
             OpenConnection();

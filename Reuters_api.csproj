@@ -160,6 +160,7 @@
     <Compile Include="Controllers\cambia_estatus_lugarController.cs" />
     <Compile Include="Controllers\datos_dashboard_userController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\proximas_reservacionesController.cs" />
     <Compile Include="Controllers\registra_lugarController.cs" />
     <Compile Include="Controllers\registra_movimientoController.cs" />
     <Compile Include="Controllers\registra_usuarioController.cs" />
