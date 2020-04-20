@@ -25,8 +25,9 @@ namespace Reuters_api.Controllers
                     lista.Add("FECHA: " + dr["FECHA"]);
                     lista.Add("HORA_ENTRADA: " + dr["HORA_ENTRADA"]);
                     lista.Add("HORA_SALIDA: " + dr["HORA_SALIDA"]);
+                    lista.Add("|");
                 }
-                lista.Add("|");
+                
 
                 return lista;
             }
