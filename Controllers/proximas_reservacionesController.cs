@@ -21,6 +21,7 @@ namespace Reuters_api.Controllers
                 {
                     //lista.Add("{");
                     lista.Add("codigo: 1");
+                    lista.Add("NUMERO_DE_RESERVACION:" + dr["ID"]);
                     lista.Add("NUMERO_LUGAR: " + dr["NUMERO_LUGAR"]);
                     lista.Add("FECHA: " + dr["FECHA"]);
                     lista.Add("HORA_ENTRADA: " + dr["HORA_ENTRADA"]);
