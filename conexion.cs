@@ -73,6 +73,16 @@ namespace Reuters_api
             i = cmd.ExecuteNonQuery();
             return i;
         }
+        public int cambia_status_usuario(string numero_usuario)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("update_status_empleado", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_EMPLEADO", numero_usuario));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
         public int cancela_reservacion(string numero_reservacion)
         {
             OpenConnection();

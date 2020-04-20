@@ -158,6 +158,7 @@
     <Compile Include="cifrado.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="Controllers\cambia_estatus_lugarController.cs" />
+    <Compile Include="Controllers\cambia_estatus_usuarioController.cs" />
     <Compile Include="Controllers\cancelar_reservacionController.cs" />
     <Compile Include="Controllers\datos_dashboard_userController.cs" />
     <Compile Include="Controllers\loginController.cs" />
