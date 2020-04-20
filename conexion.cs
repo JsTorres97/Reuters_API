@@ -73,6 +73,27 @@ namespace Reuters_api
             i = cmd.ExecuteNonQuery();
             return i;
         }
+        public int cancela_reservacion(string numero_reservacion)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("cancela_reservacion", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUM_RESERVACION", numero_reservacion));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
+        public int modifica_reservacion(string numero_reservacion, string nuevo_id)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("modificar_reservacion", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_RESERVACION", numero_reservacion));
+            cmd.Parameters.Add(new SqlParameter("@NUEVO_ID", nuevo_id));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
 
         public SqlDataReader get_lugares()
         {
