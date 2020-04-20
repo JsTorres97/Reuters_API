@@ -21,13 +21,14 @@ namespace Reuters_api.Controllers
                 {
                     //lista.Add("{");
                     lista.Add("codigo: 1");
-                    lista.Add("NUMERO_DE_RESERVACION:" + dr["ID"]);
+                    lista.Add("NUMERO_DE_RESERVACION:" + dr[0]);
                     lista.Add("NUMERO_LUGAR: " + dr["NUMERO_LUGAR"]);
                     lista.Add("FECHA: " + dr["FECHA"]);
                     lista.Add("HORA_ENTRADA: " + dr["HORA_ENTRADA"]);
                     lista.Add("HORA_SALIDA: " + dr["HORA_SALIDA"]);
+                    lista.Add("|");
                 }
-                lista.Add("|");
+                
 
                 return lista;
             }
@@ -36,7 +37,7 @@ namespace Reuters_api.Controllers
                 return new List<string>
                 {
                     "codigo: 0",
-                    "mensaje: Correo o password incorrectos",
+                    "mensaje: Existe un error, intentalo de nuevo",
                 };
             }
         }
