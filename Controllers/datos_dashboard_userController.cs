@@ -134,7 +134,7 @@ namespace Reuters_api.Controllers
                     return new List<string>
                 {
                     "codigo: 0",
-                    "mensaje: Correo o password incorrectos",
+                    "mensaje: Existe un error, intentalo de nuevo",
                 };
                 }
             }
