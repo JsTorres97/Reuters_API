@@ -168,6 +168,8 @@
     <Compile Include="Controllers\registra_lugarController.cs" />
     <Compile Include="Controllers\registra_movimientoController.cs" />
     <Compile Include="Controllers\registra_usuarioController.cs" />
+    <Compile Include="Controllers\reserva_manualController.cs" />
+    <Compile Include="Controllers\todos_usuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

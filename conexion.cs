@@ -83,6 +83,48 @@ namespace Reuters_api
             i = cmd.ExecuteNonQuery();
             return i;
         }
+        public SqlDataReader get_id_horario(string hora_e, string hora_s, string fecha)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("id_tbl_horario", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@HORA_E", hora_e));
+            cmd.Parameters.Add(new SqlParameter("@HORA_S", hora_s));
+            cmd.Parameters.Add(new SqlParameter("@FECHA", fecha));
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader get_todos_usuarios()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("todos_los_usuarios", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public int actualiza_pass(string numero_usuario, string pass)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("update_usuario_password", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_EMPLEADO", numero_usuario));
+            cmd.Parameters.Add(new SqlParameter("@NEW_PASS", pass));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
+        public int inserta_reservacion_manual(string  numero_lugar, string num_usuario, string id_horario)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("insert_reservacion_manual", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_LUGAR", numero_lugar));
+            cmd.Parameters.Add(new SqlParameter("@NUM_EMPLEADO", num_usuario));
+            cmd.Parameters.Add(new SqlParameter("@ID_HORARIO", id_horario));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
         public int cancela_reservacion(string numero_reservacion)
         {
             OpenConnection();
