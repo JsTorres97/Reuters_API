@@ -113,7 +113,7 @@ namespace Reuters_api
             i = cmd.ExecuteNonQuery();
             return i;
         }
-        public int inserta_reservacion_manual(string  numero_lugar, string num_usuario, string id_horario)
+        public SqlDataReader inserta_reservacion_manual(string  numero_lugar, string num_usuario, string id_horario)
         {
             OpenConnection();
             SqlCommand cmd = new SqlCommand("insert_reservacion_manual", con);
@@ -121,9 +121,8 @@ namespace Reuters_api
             cmd.Parameters.Add(new SqlParameter("@NUMERO_LUGAR", numero_lugar));
             cmd.Parameters.Add(new SqlParameter("@NUM_EMPLEADO", num_usuario));
             cmd.Parameters.Add(new SqlParameter("@ID_HORARIO", id_horario));
-            int i;
-            i = cmd.ExecuteNonQuery();
-            return i;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
         }
         public int cancela_reservacion(string numero_reservacion)
         {

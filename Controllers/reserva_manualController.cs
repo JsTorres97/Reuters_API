@@ -27,12 +27,17 @@ namespace Reuters_api.Controllers
             while (dr.Read())
             {
                 string id_horario = dr[0].ToString();
-                int k = con.inserta_reservacion_manual(num_lugar, num_empleado, id_horario);
-                if(k == 2)
+                //INSERTA EN MOVIMIENTOS
+                SqlDataReader dr1 = con.inserta_reservacion_manual(num_lugar, num_empleado, id_horario);
+                while (dr1.Read())
                 {
-                    lista.Add("ID_HORARIO: " + id_horario);
-                    lista.Add("|");
+                    if (dr1[0].ToString().Equals("0"))
+                    {
+                        lista.Add("ID_HORARIO: " + id_horario);
+                        lista.Add("|");
+                    }
                 }
+                
             }
             if ((lista != null) && (!lista.Any()))
             {
