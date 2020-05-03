@@ -124,6 +124,24 @@ namespace Reuters_api
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
+        public SqlDataReader get_num_lugar()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("select_todo_tbl_lugares", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
+        public int update_prioridad(string lugar)
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("update_prioridad_lugar", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@NUMERO_LUGAR", lugar));
+            int i;
+            i = cmd.ExecuteNonQuery();
+            return i;
+        }
         public int cancela_reservacion(string numero_reservacion)
         {
             OpenConnection();

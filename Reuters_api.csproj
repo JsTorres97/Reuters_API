@@ -158,6 +158,7 @@
     <Compile Include="cifrado.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="Controllers\actualiza_passController.cs" />
+    <Compile Include="Controllers\actualiza_prioridadesController.cs" />
     <Compile Include="Controllers\cambia_estatus_lugarController.cs" />
     <Compile Include="Controllers\cambia_estatus_usuarioController.cs" />
     <Compile Include="Controllers\cancelar_reservacionController.cs" />
