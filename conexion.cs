@@ -132,6 +132,14 @@ namespace Reuters_api
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
+        public SqlDataReader lugar_aleatorio()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand("select_lugar_automatico", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            return dr;
+        }
         public int update_prioridad(string lugar)
         {
             OpenConnection();
