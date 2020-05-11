@@ -8,8 +8,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    ///  Realiza la reservación con la asignación automática del lugar, con parametros desencriptados fecha, num_empleado, hora_e, hora_s
+    /// </summary>
     public class reserva_automaticaController : ApiController
     {
+        /// <summary>
+        ///  Realiza la reservación con la asignación automática del lugar, con parametros desencriptados fecha, num_empleado, hora_e, hora_s
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Reservación exitosa
+        ///     0:Devuelve los id de horario que no se pudieron reservar
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
             string cadena = cifrado.Base64Decode(id.ToString());

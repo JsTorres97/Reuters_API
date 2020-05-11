@@ -7,17 +7,26 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Cambia el estatus de un lugar, con parametros desencriptados lugar y estatus
+    /// </summary>
     public class cambia_estatus_lugarController : ApiController
     {
+        /// <summary>
+        /// Cambia el estatus de un lugar, con parametros desencriptados lugar y estatus
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Lugar actualizado con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
-            //JArray ja = JArray.Parse(id) as JArray;
 
             string cadena = cifrado.Base64Decode(id.ToString());
             string lugar, status;
             string[] datos = cadena.Split(',');
-            //correo = ja[0]["CORREO"].ToString();
-            //pass = ja[0]["PASS"].ToString();
             lugar = datos[0];
             status = datos[1];
 

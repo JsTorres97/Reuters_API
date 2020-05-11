@@ -8,8 +8,19 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Actualiza las prioridades de los lugares
+    /// </summary>
     public class actualiza_prioridadesController : ApiController
     {
+        /// <summary>
+        /// Actualiza las prioridades de los lugares
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:La prioridad de los lugares se ha actualizado correctamente
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
         public List<string> Get()
         {
             int estado = 0;
@@ -39,7 +50,7 @@ namespace Reuters_api.Controllers
             {
                 return new List<string>
                 {
-                    "codigo: 1",
+                    "codigo: 0",
                     "mensaje: Existe un error, intentalo de nuevo",
                 };
             }

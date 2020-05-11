@@ -8,8 +8,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Obtiene las próximas reservaciones del usuario
+    /// </summary>
     public class proximas_reservacionesController : ApiController
     {
+        /// <summary>
+        /// Obtiene las próximas reservaciones del usuario
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Información solicitada, NUMERO_DE_RESERVACION, NUMERO_LUGAR, FECHA, HORA_ENTRADA, HORA_SALIDA
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Número de emplado.</param>
         public List<string> Get(string id)
         {
             conexion con = new conexion();

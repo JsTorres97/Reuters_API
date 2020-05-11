@@ -7,8 +7,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Cambia el estatus del usuario
+    /// </summary>
     public class cambia_estatus_usuarioController : ApiController
     {
+        /// <summary>
+        /// Cambia el estatus del usuario
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Usuario actualizado con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Número de empleado</param>
         public List<string> Get(string id)
         {
 

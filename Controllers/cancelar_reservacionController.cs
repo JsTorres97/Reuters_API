@@ -7,8 +7,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Cancela la reservación
+    /// </summary>
     public class cancelar_reservacionController : ApiController
     {
+        /// <summary>
+        /// Cancela la reservación
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Cancelación realizada con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Número de reservación</param>
         public List<string> Get(string id)
         {
             

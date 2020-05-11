@@ -7,17 +7,26 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Registra un nuevo lugar, con parametrso desencriptados status, prioridad
+    /// </summary>
     public class registra_lugarController : ApiController
     {
+        /// <summary>
+        /// Registra un nuevo lugar, con parametrso desencriptados status, prioridad
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Lugar registrado con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
-            //JArray ja = JArray.Parse(id) as JArray;
 
             string cadena = cifrado.Base64Decode(id.ToString());
             string status, prioridad;
             string[] datos = cadena.Split(',');
-            //correo = ja[0]["CORREO"].ToString();
-            //pass = ja[0]["PASS"].ToString();
             status = datos[0];
             prioridad = datos[1];
 

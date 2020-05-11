@@ -10,8 +10,20 @@ namespace Reuters_api.Controllers
 {
     public class todos_usuariosController : ApiController
     {
+        /// <summary>
+        /// Obtiene todo los usuarios
+        /// </summary>
         public List<string> Get()
         {
+            /// <summary>
+            /// Obtiene todo los usuarios
+            /// </summary>
+            /// <returns>
+            /// código y mensaje:
+            ///     1:Cadena de información solicitada, NUMERO_EMPLEADO, NOMBRE, CORREO, AREA, STATUS
+            ///     0:Existe un error, intentalo de nuevo
+            /// </returns>
+            /// <param name="id">Cadena cifrada en base 64.</param>
             conexion con = new conexion();
             SqlDataReader dr = con.get_todos_usuarios();
             if (dr.HasRows)

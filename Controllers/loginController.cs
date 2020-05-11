@@ -5,8 +5,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Valida el login, con parametros desencriptados correo y password
+    /// </summary>
     public class loginController : ApiController
     {
+        /// <summary>
+        /// Valida el login, con parametros desencriptados correo y password
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Cadena de información solicitada, NOMBRE, NUM_EMPLEADO, is_admin, is_user
+        ///     0:Correo o password incorrectos
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List < string > Get(string id)
         {
             //JArray ja = JArray.Parse(id) as JArray;
@@ -14,8 +26,6 @@ namespace Reuters_api.Controllers
             string cadena = cifrado.Base64Decode(id.ToString());
             string correo, pass;
             string[] datos = cadena.Split(',');
-            //correo = ja[0]["CORREO"].ToString();
-            //pass = ja[0]["PASS"].ToString();
             correo = datos[0];
             pass = datos[1];
 

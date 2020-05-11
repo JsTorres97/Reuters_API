@@ -163,6 +163,7 @@
     <Compile Include="Controllers\cambia_estatus_usuarioController.cs" />
     <Compile Include="Controllers\cancelar_reservacionController.cs" />
     <Compile Include="Controllers\datos_dashboard_userController.cs" />
+    <Compile Include="Controllers\get_lugaresController.cs" />
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\modificar_reservacionController.cs" />
     <Compile Include="Controllers\proximas_reservacionesController.cs" />

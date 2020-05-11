@@ -7,17 +7,26 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Actualiza la contraseña del usuario, con parametros desencriptados número de empleado y password
+    /// </summary>
     public class actualiza_passController : ApiController
     {
+        /// <summary>
+        /// Actualiza la contraseña del usuario, con parametros desencriptados número de empleado y password
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Contraseña actualizada con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
-            //JArray ja = JArray.Parse(id) as JArray;
 
             string cadena = cifrado.Base64Decode(id.ToString());
             string num_emp, pass;
             string[] datos = cadena.Split(',');
-            //correo = ja[0]["CORREO"].ToString();
-            //pass = ja[0]["PASS"].ToString();
             num_emp = datos[0];
             pass = datos[1];
 

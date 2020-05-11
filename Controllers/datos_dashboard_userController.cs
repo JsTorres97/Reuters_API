@@ -8,8 +8,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Obtiene datos para el dashboard de usuario
+    /// </summary>
     public class datos_dashboard_userController : ApiController
     {
+        /// <summary>
+        /// Obtiene datos para el dashboard de usuario
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Cadena de información solicitada
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Número de solicitud, 1: Número de Hot Desk registrados, 2: Número de usuarios registrados, 3:Número de Hot Desk disponibles, 4:Número de usuarios en la oficina</param>
         public List<string> Get(string id)
         {
             if (id.Equals("1")) 

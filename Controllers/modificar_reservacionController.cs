@@ -7,8 +7,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Modifica la reservación, con parametros desencriptados número de reservación y el nuevo id de horario
+    /// </summary>
     public class modificar_reservacionController : ApiController
     {
+        /// <summary>
+        /// Modifica la reservación, con parametros desencriptados número de reservación y el nuevo id de horario
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Reservación actualizada con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
             //JArray ja = JArray.Parse(id) as JArray;

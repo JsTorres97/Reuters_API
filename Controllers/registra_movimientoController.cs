@@ -7,8 +7,20 @@ using System.Web.Http;
 
 namespace Reuters_api.Controllers
 {
+    /// <summary>
+    /// Registra en la tabla de movimientos, con parametros desencriptados, tipo, num_lugar, num_emp, id_horario
+    /// </summary>
     public class registra_movimientoController : ApiController
     {
+        /// <summary>
+        /// Registra en la tabla de movimientos, con parametros desencriptados, tipo, num_lugar, num_emp, id_horario
+        /// </summary>
+        /// <returns>
+        /// código y mensaje:
+        ///     1:Operación registrada con exito
+        ///     0:Existe un error, intentalo de nuevo
+        /// </returns>
+        /// <param name="id">Cadena cifrada en base 64.</param>
         public List<string> Get(string id)
         {
             //JArray ja = JArray.Parse(id) as JArray;
