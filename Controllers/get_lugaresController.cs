@@ -10,8 +10,7 @@ namespace Reuters_api.Controllers
 {
     public class get_lugaresController : ApiController
     {
-        public class todos_usuariosController : ApiController
-        {
+        
             /// <summary>
             /// Obtiene todo los usuarios
             /// </summary>
@@ -54,4 +53,4 @@ namespace Reuters_api.Controllers
             }
         }
     }
-}
+
